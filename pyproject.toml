@@ -1,0 +1,57 @@
+[project]
+name = "playertracker"
+version = "0.1.0"
+description = "CLI tool to track Roblox player statuses in real time."
+
+authors = [{name = "Expansionator"}]
+
+readme = "README.md"
+license = {text = "MIT"}
+
+requires-python = ">=3.13"
+
+dependencies = [
+    "alive-progress>=3.3.0",
+    "diskcache==5.6.3",
+    "diskcache-stubs>=5.6.3.6.20240818",
+    "platformdirs>=4.9.6",
+    "psutil>=7.2.2",
+    "requests>=2.33.1",
+    "rich>=15.0.0",
+]
+
+[project.scripts]
+pt = "playertracker.main:main"
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.20.0",
+    "pyright>=1.1.409",
+    "pytest>=9.0.3",
+    "ruff>=0.15.13",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 90
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "B",
+    "UP",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["playertracker"]
+
+[project.urls]

@@ -1,0 +1,9 @@
+{
+  "DEFAULT_CONFIG": {
+    "PROGRAM_ID": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "SEPARATOR": ",",
+    "MAX_USER_IDS": 100,
+    "CHUNK_SIZE": 5,
+    "MAX_CHAR_USER_NAME": 30
+  }
+}
