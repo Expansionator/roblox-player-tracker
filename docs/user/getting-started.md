@@ -5,12 +5,12 @@ PlayerTracker is a CLI tool that lets you monitor Roblox player statuses (Offlin
 ## Installation
 
 1. Head to the [Releases](https://github.com/Expansionator/roblox-player-tracker/releases) page
-2. Download the latest executable
-3. Place it somewhere convenient on your machine
+2. Download the latest .zip file
+3. Extract it somewhere convenient on your machine
 
 ## First Run
 
-Open a terminal, navigate to where you placed the executable, and run it. You will be greeted with the main menu.
+Double-click the executable inside the extracted folder. You will be greeted with the main menu.
 
 > **Note:** Results depend on each player's privacy settings and may not always be available.
 

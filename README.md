@@ -8,7 +8,7 @@
 ![Python](https://img.shields.io/badge/Python-3.13+-blue?logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows-informational?logo=windows&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Version](https://img.shields.io/github/v/release/Expansionator/roblox-player-tracker)
+![Version](https://img.shields.io/badge/release-v0.1.0-%20orange)
 
 <img src="assets/demo.webp" alt="cli-demo" width="100%">
 
@@ -32,7 +32,7 @@ It supports managing a personal list of User IDs, assigning nicknames (referred 
 
 ## Installation
 
-Head to the [Releases](https://github.com/Expansionator/roblox-player-tracker/releases) page and download the latest executable. 
+Head to the [Releases](https://github.com/Expansionator/roblox-player-tracker/releases) page, download the latest .zip, and extract it.
 
 No Python installation required.  
 PlayerTracker ships as a standalone `.exe`.
