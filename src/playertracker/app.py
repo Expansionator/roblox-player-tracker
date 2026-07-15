@@ -154,7 +154,7 @@ class App:
             # Only a specific set of statuses is allowed: "Offline", "Online",
             # and "Playing". If the presence type falls outside these,
             # it defaults to "Offline" or "Online" if in Roblox Studio
-            if user_presence_type > len(player_data):
+            if user_presence_type >= len(player_data):
                 # Value	| Roblox Label
                 # 0	    | Offline
                 # 1	    | Online

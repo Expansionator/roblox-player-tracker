@@ -28,7 +28,7 @@ _LOG_FORMAT: Final[str] = "[%(asctime)s] %(levelname)s %(name)s: %(message)s"
 _LOG_DATE_FORMAT: Final[str] = "%Y-%m-%d %H:%M:%S"
 
 _MAX_LOG_SIZE: Final[int] = 5_000_000  # 5 MB
-_MAX_BACKUPS: Final[int] = 3
+_MAX_BACKUPS: Final[int] = 1
 
 _UNHANDLED_EXCEPTION: Final[str] = "Uncaught exception"
 
