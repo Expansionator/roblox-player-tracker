@@ -3,7 +3,7 @@
 Thanks for your interest in contributing! This document outlines how to get involved.
 
 ## Prerequisites
- 
+
 Before contributing, make sure you have:
 
 - Python 3.13 installed
@@ -32,7 +32,7 @@ uv sync
 1. Create a new branch for your change
 
 ```bash
-git switch -c feature/your-feature-name
+git switch -c feat/your-feature-name
 ```
 
 2. Make your changes
@@ -46,7 +46,7 @@ git commit -m "brief description of what you did"
 4. Push to your fork
 
 ```bash
-git push origin feature/your-feature-name
+git push origin feat/your-feature-name
 ```
 
 5. Open a pull request against the `main` branch and describe what your change does and why.

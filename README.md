@@ -8,7 +8,7 @@
 ![Python](https://img.shields.io/badge/Python-3.13+-blue?logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows-informational?logo=windows&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Version](https://img.shields.io/badge/release-v0.1.0-%20orange)
+![Version](https://img.shields.io/badge/release-v1.0.0-%20green)
 
 <img src="assets/demo.webp" alt="cli-demo" width="100%">
 
