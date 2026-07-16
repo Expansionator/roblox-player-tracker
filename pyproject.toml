@@ -1,6 +1,6 @@
 [project]
 name = "playertracker"
-version = "0.1.0"
+version = "1.0.0"
 description = "CLI tool to track Roblox player statuses in real time."
 
 authors = [{name = "Expansionator"}]
