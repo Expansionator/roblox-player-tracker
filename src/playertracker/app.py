@@ -54,6 +54,11 @@ _PRESENCE_MAP: Final[Sequence[str]] = ["Offline", "Online", "Playing"]
 # theme styles defined in output.py
 _COLOR_PRESENCE_MAP: Final[Sequence[str]] = ["offline", "online", "playing"]
 
+_RAW_IN_STUDIO: Final[int] = 3
+
+_ONLINE: Final[int] = 1
+_OFFLINE: Final[int] = 0
+
 _LOGGER = get_lazy_logger(__name__)
 
 type PlayerData = dict[int, list[str]]
@@ -143,27 +148,37 @@ class App:
 
         return Result.ok(result.payload[0])
 
+    @staticmethod
+    def _get_presence_type(raw_user_presence: int) -> int:
+        """
+        Only a specific set of statuses is allowed: "Offline", "Online",
+        and "Playing".
+
+        If the presence type falls outside these, it defaults
+        to "Offline" or "Online" if in Roblox Studio.
+
+        # Value	| Roblox Label | Display Label
+        # 0	    | Offline      | Offline
+        # 1	    | Online       | Online
+        # 2	    | InGame       | Playing
+        # 3	    | InStudio     | Online
+        # 4	    | Invisible    | Offline
+        """
+
+        if raw_user_presence >= len(_PRESENCE_MAP):
+            return _ONLINE if raw_user_presence == _RAW_IN_STUDIO else _OFFLINE
+
+        return raw_user_presence
+
     @log_lifecycle(start="Initiating player presence grouping sequence by type.")
     def _group_by_presence(self, parsed_data: ParsedData) -> PlayerData:
         """Groups parsed player data by presence type into a keyed dictionary."""
 
         player_data: PlayerData = {p_type: [] for p_type, _ in enumerate(_PRESENCE_MAP)}
+
         for user_id, user_info in parsed_data.items():
-            user_presence_type = user_info[PRESENCE_TYPE_KEY]
-
-            # Only a specific set of statuses is allowed: "Offline", "Online",
-            # and "Playing". If the presence type falls outside these,
-            # it defaults to "Offline" or "Online" if in Roblox Studio
-            if user_presence_type >= len(player_data):
-                # Value	| Roblox Label
-                # 0	    | Offline
-                # 1	    | Online
-                # 2	    | InGame
-                # 3	    | InStudio
-                # 4	    | Invisible
-                user_presence_type = 1 if user_presence_type == 3 else 0
-
-            player_data[user_presence_type].append(user_id)
+            presence_type = self._get_presence_type(user_info[PRESENCE_TYPE_KEY])
+            player_data[presence_type].append(user_id)
 
         return player_data
 
@@ -229,7 +244,7 @@ class App:
             padding = (longest_key + _EXTRA_PADDING) - len(key)
             gap = " " * padding
 
-            presence_type = user_info[PRESENCE_TYPE_KEY]
+            presence_type = self._get_presence_type(user_info[PRESENCE_TYPE_KEY])
 
             presence = _PRESENCE_MAP[presence_type]
             color = _COLOR_PRESENCE_MAP[presence_type]
