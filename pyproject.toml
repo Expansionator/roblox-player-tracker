@@ -1,6 +1,6 @@
 [project]
 name = "playertracker"
-version = "1.0.0"
+version = "1.0.1"
 description = "CLI tool to track Roblox player statuses in real time."
 
 authors = [{name = "Expansionator"}]
@@ -12,6 +12,7 @@ requires-python = ">=3.13"
 
 dependencies = [
     "alive-progress>=3.3.0",
+    "certifi>=2026.10.19",
     "diskcache==5.6.3",
     "diskcache-stubs>=5.6.3.6.20240818",
     "platformdirs>=4.9.6",
@@ -53,5 +54,3 @@ select = [
 
 [tool.ruff.lint.isort]
 known-first-party = ["playertracker"]
-
-[project.urls]
